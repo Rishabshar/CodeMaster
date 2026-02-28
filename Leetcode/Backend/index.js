@@ -11,7 +11,14 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-app.use(cors());
+app.use(cors(
+  {
+    origin:[
+      'http://localhost:5173',                          // for local dev
+    'https://CodeMaster-Frontend.onrender.com'        // your future frontend URL
+    ]
+  }
+));
 
 // Register all routes
 app.use('/', submissionsRouter);   // ✅ /api/submissions
