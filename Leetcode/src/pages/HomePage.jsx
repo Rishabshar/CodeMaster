@@ -1,4 +1,4 @@
-// src/pages/HomePage.jsx - Fixed Framer Motion Props
+// src/pages/HomePage.jsx - Updated (Stats Removed)
 import { Link } from 'react-router-dom';
 import { SignedIn, SignedOut } from '@clerk/clerk-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -98,13 +98,13 @@ export default function HomePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
           >
-            Practice 500+ problems with Monaco Editor, track progress with animated charts, 
-            and prepare for FAANG interviews.
+            Practice problems with Monaco Editor, track progress with animated charts, 
+            and prepare for upcoming interviews.
           </motion.p>
 
           {/* CTA Buttons */}
           <motion.div 
-            className="flex flex-col sm:flex-row gap-6 justify-center mb-24"
+            className="flex flex-col sm:flex-row gap-6 justify-center"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
@@ -140,34 +140,6 @@ export default function HomePage() {
                 </Link>
               </motion.div>
             </SignedIn>
-          </motion.div>
-
-          {/* Stats - Glass Cards */}
-          <motion.div 
-            className="grid grid-cols-3 gap-8 max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8 }}
-          >
-            {[
-              { num: '500+', label: 'Problems', color: 'text-teal-400' },
-              { num: '10K+', label: 'Users', color: 'text-cyan-400' },
-              { num: '5+', label: 'Languages', color: 'text-emerald-400' }
-            ].map((stat, i) => (
-              <motion.div 
-                key={i}
-                className="group relative p-8 bg-gradient-to-b from-slate-900/80 via-slate-800/50 to-slate-900/80 backdrop-blur-3xl border border-white/10 rounded-3xl shadow-2xl shadow-slate-900/50 hover:shadow-teal-500/20 hover:border-teal-400/30 hover:scale-110 transition-all duration-700"
-                whileHover={{ y: -10 }}
-              >
-                <div className="absolute -inset-1 bg-gradient-to-r from-teal-500/20 to-blue-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-75 transition-all duration-700" />
-                <div className="relative bg-slate-900/20 backdrop-blur-xl border border-white/5 rounded-2xl p-6">
-                  <p className={`text-4xl font-black bg-gradient-to-r ${stat.color} to-white bg-clip-text text-transparent mb-2`}>
-                    {stat.num}
-                  </p>
-                  <p className="text-slate-400 font-semibold uppercase tracking-wider text-sm">{stat.label}</p>
-                </div>
-              </motion.div>
-            ))}
           </motion.div>
         </motion.div>
       </section>
@@ -252,7 +224,7 @@ export default function HomePage() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
               >
-                Join 10K+ developers mastering algorithms today
+                Join developers mastering algorithms today
               </motion.p>
               
               <SignedOut>
